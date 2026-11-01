@@ -1,0 +1,320 @@
+@import "tailwindcss";
+
+:root,
+[data-pastel="mint"] {
+  --pastel-bg: #f4f8f5;
+  --pastel-nav: rgba(255, 255, 255, 0.95);
+  --pastel-card: #ffffff;
+  --pastel-card-subtle: #f9fbf9;
+  --pastel-surface: #edf5ef;
+  --pastel-surface-hover: #e3efe6;
+  --pastel-border: #d4e5da;
+  --pastel-border-subtle: #e2ede5;
+  --pastel-border-strong: #bad6c3;
+  --pastel-text-title: #142d1f;
+  --pastel-text-body: #2b4536;
+  --pastel-text-muted: #587564;
+  --pastel-accent: #2e7d52;
+  --pastel-accent-hover: #256b44;
+  --pastel-accent-light: #e4f4ec;
+  --pastel-accent-border: #bce3cb;
+  --pastel-ring: rgba(46, 125, 82, 0.2);
+  --shadow-pastel: 0 4px 20px -2px rgba(40, 75, 55, 0.05);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(45, 80, 60, 0.04);
+}
+
+[data-pastel="peach"] {
+  --pastel-bg: #faf5f0;
+  --pastel-nav: rgba(255, 255, 255, 0.95);
+  --pastel-card: #ffffff;
+  --pastel-card-subtle: #fdf9f6;
+  --pastel-surface: #f6ece3;
+  --pastel-surface-hover: #eddcd1;
+  --pastel-border: #ebdcd1;
+  --pastel-border-subtle: #f4e8df;
+  --pastel-border-strong: #d8c1b1;
+  --pastel-text-title: #2b1d16;
+  --pastel-text-body: #423027;
+  --pastel-text-muted: #745b50;
+  --pastel-accent: #ba6438;
+  --pastel-accent-hover: #a5542b;
+  --pastel-accent-light: #faece3;
+  --pastel-accent-border: #f4cdbb;
+  --pastel-ring: rgba(186, 100, 56, 0.2);
+  --shadow-pastel: 0 4px 20px -2px rgba(85, 55, 40, 0.05);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(85, 55, 40, 0.04);
+}
+
+[data-pastel="lavender"] {
+  --pastel-bg: #f6f5fa;
+  --pastel-nav: rgba(255, 255, 255, 0.95);
+  --pastel-card: #ffffff;
+  --pastel-card-subtle: #faf9fd;
+  --pastel-surface: #eeeaf6;
+  --pastel-surface-hover: #e4ddf0;
+  --pastel-border: #ded7ec;
+  --pastel-border-subtle: #eae4f3;
+  --pastel-border-strong: #c7bcdb;
+  --pastel-text-title: #201730;
+  --pastel-text-body: #392c4a;
+  --pastel-text-muted: #65577c;
+  --pastel-accent: #6b51a0;
+  --pastel-accent-hover: #5a418c;
+  --pastel-accent-light: #f0ecf9;
+  --pastel-accent-border: #d7c9f0;
+  --pastel-ring: rgba(107, 81, 160, 0.2);
+  --shadow-pastel: 0 4px 20px -2px rgba(65, 45, 90, 0.05);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(65, 45, 90, 0.04);
+}
+
+[data-pastel="sky"] {
+  --pastel-bg: #f3f7fb;
+  --pastel-nav: rgba(255, 255, 255, 0.95);
+  --pastel-card: #ffffff;
+  --pastel-card-subtle: #f8fbfe;
+  --pastel-surface: #e8f1f9;
+  --pastel-surface-hover: #dae8f4;
+  --pastel-border: #d4e4f2;
+  --pastel-border-subtle: #e2edf7;
+  --pastel-border-strong: #bad6ed;
+  --pastel-text-title: #142436;
+  --pastel-text-body: #283d54;
+  --pastel-text-muted: #546c86;
+  --pastel-accent: #3371ad;
+  --pastel-accent-hover: #275e93;
+  --pastel-accent-light: #e6f1fc;
+  --pastel-accent-border: #bfdbf7;
+  --pastel-ring: rgba(51, 113, 173, 0.2);
+  --shadow-pastel: 0 4px 20px -2px rgba(45, 65, 85, 0.05);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(45, 65, 85, 0.04);
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--pastel-bg);
+    color: var(--pastel-text-body);
+    min-height: 100vh;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* Custom pastel scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--pastel-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pastel-border-strong);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pastel-accent);
+}
+
+/* Base Pastel Layout Mappings for clean dark-to-pastel conversion */
+.bg-\[\#0b130e\],
+.bg-\[\#08120b\] {
+  background-color: var(--pastel-bg) !important;
+  color: var(--pastel-text-body) !important;
+}
+
+header.bg-\[\#0d1712\]\/95,
+header.bg-\[\#0d1712\],
+footer.bg-\[\#0e1912\] {
+  background-color: var(--pastel-nav) !important;
+  color: var(--pastel-text-body) !important;
+  border-color: var(--pastel-border) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+/* Card surfaces */
+.bg-\[\#111e16\],
+.bg-\[\#112317\],
+.bg-\[\#0e1a12\] {
+  background-color: var(--pastel-card) !important;
+  border-color: var(--pastel-border) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+/* Inner wells, input containers, sub-panels */
+.bg-\[\#14231b\],
+.bg-\[\#15271d\],
+.bg-\[\#16291f\],
+.bg-\[\#14261c\],
+.bg-\[\#14241b\] {
+  background-color: var(--pastel-surface) !important;
+  border-color: var(--pastel-border) !important;
+}
+
+.hover\:bg-\[\#132219\]:hover,
+.bg-\[\#132219\] {
+  background-color: var(--pastel-surface-hover) !important;
+}
+
+/* Border overrides */
+.border-emerald-900\/60,
+.border-emerald-900\/70,
+.border-emerald-900\/50,
+.border-emerald-900\/40,
+.border-emerald-900\/30,
+.border-emerald-950,
+.border-emerald-950\/80,
+.border-emerald-950\/70 {
+  border-color: var(--pastel-border) !important;
+}
+
+/* Text Hierarchy for high readability on pastel */
+.text-slate-100 {
+  color: var(--pastel-text-title) !important;
+}
+
+.text-slate-200 {
+  color: var(--pastel-text-title) !important;
+}
+
+.text-slate-300 {
+  color: var(--pastel-text-body) !important;
+}
+
+.text-slate-400 {
+  color: var(--pastel-text-muted) !important;
+}
+
+/* Ensure solid primary action buttons maintain crisp white text */
+button.bg-emerald-600,
+button.bg-emerald-500,
+button.bg-rose-600,
+.bg-emerald-600,
+.bg-emerald-700,
+.bg-rose-600 {
+  color: #ffffff !important;
+}
+
+button.bg-emerald-600 *,
+button.bg-rose-600 *,
+.bg-emerald-600 *,
+.bg-rose-600 * {
+  color: #ffffff !important;
+}
+
+/* Pastel Badge Transformations */
+.bg-emerald-950,
+.bg-emerald-950\/80,
+.bg-emerald-950\/70,
+.bg-emerald-950\/60,
+.bg-emerald-900\/60,
+.bg-emerald-900\/40,
+.bg-emerald-900\/30 {
+  background-color: var(--pastel-accent-light) !important;
+  color: var(--pastel-accent) !important;
+  border-color: var(--pastel-accent-border) !important;
+}
+
+.text-emerald-400,
+.text-emerald-300 {
+  color: var(--pastel-accent) !important;
+}
+
+/* Amber / Warning Pastel Badges */
+.bg-amber-950,
+.bg-amber-950\/80 {
+  background-color: #fef4e8 !important;
+  color: #9c5415 !important;
+  border-color: #fcd8b8 !important;
+}
+
+.text-amber-400,
+.text-amber-300 {
+  color: #a85816 !important;
+}
+
+/* Rose / Error Pastel Badges */
+.bg-rose-950,
+.bg-rose-950\/80 {
+  background-color: #fdeeed !important;
+  color: #b42b30 !important;
+  border-color: #f8c6c8 !important;
+}
+
+.text-rose-400,
+.text-rose-300 {
+  color: #b42b30 !important;
+}
+
+/* Blue / Sky Pastel Badges */
+.bg-blue-950,
+.bg-blue-950\/80,
+.bg-sky-950 {
+  background-color: #edf5fe !important;
+  color: #2163a7 !important;
+  border-color: #c4e0fb !important;
+}
+
+.text-blue-400,
+.text-blue-300 {
+  color: #2163a7 !important;
+}
+
+/* Form Select & Input styling */
+select option {
+  background-color: var(--pastel-card) !important;
+  color: var(--pastel-text-title) !important;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+  background-color: var(--pastel-surface) !important;
+  color: var(--pastel-text-title) !important;
+  border-color: var(--pastel-border) !important;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--pastel-accent) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px var(--pastel-ring) !important;
+}
+
+/* Range input accent */
+input[type="range"] {
+  accent-color: var(--pastel-accent) !important;
+}
+
+/* Animation */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite ease-in-out;
+}
+
+/* Farmer Outdoor / Easy-Read Mode */
+.farmer-easy-mode {
+  font-size: 105%;
+}
+
+.farmer-easy-mode p,
+.farmer-easy-mode span,
+.farmer-easy-mode button {
+  letter-spacing: 0.01em;
+}
+
+.farmer-easy-mode .card,
+.farmer-easy-mode [class*="rounded-2xl"],
+.farmer-easy-mode [class*="rounded-3xl"] {
+  border-width: 1.5px;
+}
+

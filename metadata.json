@@ -1,0 +1,6 @@
+{
+  "name": "AgriSense AI - Smart Crop Health, Soil & Pest Intelligence",
+  "description": "Smart farming decision system with CNN leaf disease detection and Grad-CAM explainability, soil fertility assessment, live weather pest risk prediction, IoT telemetry, and multilingual support (English, Hindi, Marathi).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
